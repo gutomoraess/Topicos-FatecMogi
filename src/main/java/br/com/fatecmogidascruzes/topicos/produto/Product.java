@@ -11,9 +11,17 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private Float unitprice;
-    private Float qtd;
-    private Boolean perecivel;
+    private Float unitaryprice;
+    private Float quantity;
+    private Boolean perishable;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -31,28 +39,28 @@ public class Product {
         this.description = description;
     }
 
-    public Float getUnitprice() {
-        return unitprice;
+    public Float getUnitaryprice() {
+        return unitaryprice;
     }
 
-    public void setUnitprice(Float unitprice) {
-        this.unitprice = unitprice;
+    public void setUnitaryprice(Float unitaryprice) {
+        this.unitaryprice = unitaryprice;
     }
 
-    public Float getQtd() {
-        return qtd;
+    public Float getQuantity() {
+        return quantity;
     }
 
-    public void setQtd(Float qtd) {
-        this.qtd = qtd;
+    public void setQuantity(Float quantity) {
+        this.quantity = quantity;
     }
 
-    public Boolean getPerecivel() {
-        return perecivel;
+    public Boolean getPerishable() {
+        return perishable;
     }
 
-    public void setPerecivel(Boolean perecivel) {
-        this.perecivel = perecivel;
+    public void setPerishable(Boolean perishable) {
+        this.perishable = perishable;
     }
 
     @Override

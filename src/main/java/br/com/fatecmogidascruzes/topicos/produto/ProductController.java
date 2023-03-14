@@ -22,28 +22,29 @@ public class ProductController {
         return productRepository.findAll();
     }
 
-    @GetMapping("/{name}")
-    public Optional<Product> getByName(@PathVariable String name) {
-        return productRepository.findByName(name);
+    @GetMapping("/{id}")
+    public Optional<Product> findById(@PathVariable Long id) {
+        return productRepository.findById(id);
     }
 
-    @DeleteMapping("/{name}")
-    public void deleteByName(@PathVariable String name) {
-        Optional<Product> product = productRepository.findByName(name);
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        Optional<Product> product = productRepository.findById(id);
         if(product.isPresent()) {
             productRepository.delete(product.get());
         }
     }
 
-    @PutMapping("/{name}")
-    public void updateByName(@PathVariable String name,
-                             @RequestBody Product product) {
-        Optional<Product> opDatabaseProduct = productRepository.findByName(name);
+    @PutMapping("/{id}")
+    public void updateById(@PathVariable("id") Long id, @RequestBody Product product) {
+        Optional<Product> opDatabaseProduct = productRepository.findById(id);
         if(opDatabaseProduct.isPresent()) {
             Product databaseProduct = opDatabaseProduct.get();
             databaseProduct.setName(product.getName());
             databaseProduct.setDescription(product.getDescription());
-            databaseProduct.setUnitprice(product.getUnitprice());
+            databaseProduct.setUnitaryprice(product.getUnitaryprice());
+            databaseProduct.setQuantity(product.getQuantity());
+            databaseProduct.setPerishable(product.getPerishable());
             productRepository.save(databaseProduct);
         }
     }
