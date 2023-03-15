@@ -11,7 +11,7 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private Float unitaryprice;
+    private Float unitprice;
     private Float quantity;
     private Boolean perishable;
 
@@ -39,12 +39,12 @@ public class Product {
         this.description = description;
     }
 
-    public Float getUnitaryprice() {
-        return unitaryprice;
+    public Float getUnitprice() {
+        return unitprice;
     }
 
-    public void setUnitaryprice(Float unitaryprice) {
-        this.unitaryprice = unitaryprice;
+    public void setUnitprice(Float unitprice) {
+        this.unitprice = unitprice;
     }
 
     public Float getQuantity() {

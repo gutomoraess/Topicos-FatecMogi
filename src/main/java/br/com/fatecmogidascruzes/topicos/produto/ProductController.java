@@ -42,7 +42,7 @@ public class ProductController {
             Product databaseProduct = opDatabaseProduct.get();
             databaseProduct.setName(product.getName());
             databaseProduct.setDescription(product.getDescription());
-            databaseProduct.setUnitaryprice(product.getUnitaryprice());
+            databaseProduct.setUnitprice(product.getUnitprice());
             databaseProduct.setQuantity(product.getQuantity());
             databaseProduct.setPerishable(product.getPerishable());
             productRepository.save(databaseProduct);
