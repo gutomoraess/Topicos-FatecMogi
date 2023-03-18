@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List customers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../css/list.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="bodydiv">
+    <h1>Customers</h1>
+    <div class="buttonsdiv">
+        <a href="customernew.html" class="btn btn-success">Add new</a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>ITIN</th>
+            <th>Phone</th>
+            <th>E-mail</th>
+            <th class="text-center">Action</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/customers/customerlist.js"></script>
+<script src="../../js/customers/customerdelete.js"></script>
+
+</body>
+</html>
