@@ -1,41 +1,35 @@
-@charset "ISO-8859-1";
-
 body {
-    background: #dfdfdf;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: lightgray;
 }
 
 h1 {
-    color: black;
-    font-family: 'Segoe UI';
-    font-size: 36px;
-    font-weight: 600;
-    margin-top: 30px;
+    background-color: darkgray;
+    border-bottom: 2px solid black;
     text-align: center;
+    color: white;
 }
 
-td {
-    text-align: center;
-    font-family: 'Segoe UI';
+form {
+    display: block;
+    margin: 0 auto;
+}
+
+.formulario {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+label{
     font-weight: bold;
 }
 
-
-.saveandclear {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.buttonsdiv{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
-button {
-    border: 1px solid #000000;
-    background-color: rgb(255, 255, 255);
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-family: 'Segoe UI';
+input {
+    margin-bottom: 10px;
 }

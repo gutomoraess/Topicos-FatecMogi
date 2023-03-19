@@ -6,37 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New customer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../css/register.css" rel="stylesheet"/>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <h1>New customer</h1>
-        <form id="form" action="http://localhost:8080/customers" method="post">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" class="form-control">
-            </div>
-            <div>
-                <label for="itin">ITIN:</label>
-                <input type="number" name="itin" id="itin" class="form-control" required>
-            </div>
-            <div>
-                <label for="phone">Phone:</label>
-                <input type="phone" name="phone" id="phone" class="form-control">
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" class="form-control">
-            </div>
-            <button type="button" id="save" class="btn btn-success">Salvar</button>
-        </form>
-        <a href="customerlist.html" class="btn btn-primary">Back</a>
-    </div>
+<div class="bodydiv">
+    <h1>New customer</h1>
+    <form id="form" action="http://localhost:8080/customers" method="post">
+        <div class="formulario">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" class="form-control">
+            <label for="itin">ITIN:</label>
+            <input type="number" name="itin" id="itin" class="form-control" required>
+            <label for="phone">Phone:</label>
+            <input type="phone" name="phone" id="phone" class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control">
+        </div>
+        <div class="buttonsdiv">
+            <a href="customerlist.html" class="btn btn-primary">Back</a>
+            <button type="button" id="save" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/customers/customernew.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/customers/customernew.js"></script>
 
 </body>
 

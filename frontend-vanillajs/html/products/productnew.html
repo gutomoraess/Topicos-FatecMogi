@@ -7,36 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../css/register.css" rel="stylesheet"/>
 </head>
 
 <body>
 
-<div class="container-fluid">
+<div class="bodydiv">
     <h1>New product</h1>
     <form id="form" action="http://localhost:8080/products" method="post">
-        <div>
+        <div class="formulario">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" class="form-control">
-        </div>
-        <div>
             <label for="description">Description:</label>
             <input type="text" name="description" id="description" class="form-control">
-        </div>
-        <div>
             <label for="unitprice">Unit Price:</label>
             <input type="number" name="unitprice" id="unitprice" class="form-control">
-        </div>
-        <div>
             <label for="quantity">Quantity:</label>
             <input type="number" name="quantity" id="quantity" class="form-control">
-        </div>
-        <div>
             <label for="perishable">Perishable:</label>
             <input type="checkbox" name="perishable" id="perishable">
         </div>
-        <button type="button" id="save" class="btn btn-success">Salvar</button>
+        <div class="buttonsdiv">
+            <a href="productlist.html" class="btn btn-primary">Back</a>
+            <button type="button" id="save" class="btn btn-success">Save</button>
+        </div>
     </form>
-    <a href="productlist.html" class="btn btn-primary">Back</a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
