@@ -9,17 +9,13 @@ save.addEventListener('click', (event) =>{
     event.preventDefault(); // prevent the default form submission
     const isValid = validateFields();
     if (isValid){
-        const itin = document.getElementById("itin");
-        console.log(itin.value);
-        if (itin) {
-            checkItin(itin.value);
-        }
+        checkItin();
     }
 });
 
-async function checkItin(itinValue) {
+async function checkItin() {
     try {
-        const response = await fetch(`http://localhost:8080/customers/${itinValue}`);
+        const response = await fetch(`http://localhost:8080/customers/${itin.value}`);
         if (response.ok) {
             const data = await response.json();
             console.log(data);
