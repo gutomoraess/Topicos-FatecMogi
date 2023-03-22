@@ -21,7 +21,7 @@ async function populateForm() {
         document.getElementById('quantity').value = product.quantity
         document.getElementById('perishable').checked = product.perishable
 
-        document.getElementById('save').onclick = async function() {
+        document.getElementById('save').onclick = async function () {
             const updatedProduct = {
                 name: document.getElementById('name').value,
                 description: document.getElementById('description').value,
@@ -40,7 +40,7 @@ async function populateForm() {
             }
         }
 
-    } catch(error) {
+    } catch (error) {
         console.error(error)
     }
 }
@@ -65,7 +65,7 @@ async function editProduct(updatedProduct) {
             return false
         }
 
-    } catch(error) {
+    } catch (error) {
         console.error(error)
         return false
     }

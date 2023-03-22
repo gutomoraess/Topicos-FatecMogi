@@ -18,7 +18,7 @@ async function populateForm(getItin) {
         document.getElementById('phone').value = customer.phone
         document.getElementById('email').value = customer.email
 
-        document.getElementById('save').onclick = async function() {
+        document.getElementById('save').onclick = async function () {
             const updatedCustomer = {
                 name: document.getElementById('name').value,
                 itin: document.getElementById('itin').value,
@@ -42,7 +42,7 @@ async function populateForm(getItin) {
             }
         }
 
-    } catch(error) {
+    } catch (error) {
         console.error(error)
     }
 }
@@ -67,7 +67,7 @@ async function editCustomer(itin, customer) {
             return false
         }
 
-    } catch(error) {
+    } catch (error) {
         console.error(error)
         return false
     }

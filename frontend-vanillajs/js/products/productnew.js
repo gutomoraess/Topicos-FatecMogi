@@ -29,8 +29,8 @@ async function postProducts() {
             })
         })
         window.location = "productlist.html"
-        
-    } catch(error) {
+
+    } catch (error) {
         console.error(error)
     }
 }

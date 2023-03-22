@@ -3,10 +3,6 @@ body {
     margin: 0;
 }
 
-#backtoindex {
-    text-align: right;
-}
-
 #found {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -18,7 +14,7 @@ body {
     padding-left: 0;
 }
 
-.buttonsdiv{
+.buttonsdiv {
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
@@ -37,7 +33,7 @@ h1 {
     border-color: black;
 }
 
-#addhr{
+#addhr {
     margin-top: 2px;
 }
 
@@ -59,4 +55,8 @@ thead {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
+}
+
+#trlines {
+    border-bottom: 2px solid black;
 }

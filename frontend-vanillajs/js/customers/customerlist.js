@@ -9,7 +9,7 @@ async function getCustomers() {
             customerBody.innerHTML = `<tr><td id="found" colspan="5">No customers found</td></tr>`
         } else {
             for (const customer of customers) {
-                customerBody.innerHTML = customerBody.innerHTML + `<tr>
+                customerBody.innerHTML = customerBody.innerHTML + `<tr id="trlines">
                     <td>${customer.name}</td>
                     <td>${customer.itin}</td>
                     <td>${customer.phone}</td>

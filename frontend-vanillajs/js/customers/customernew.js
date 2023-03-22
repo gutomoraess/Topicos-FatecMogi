@@ -5,10 +5,10 @@ const phone = document.getElementById("phone")
 const email = document.getElementById("email")
 const save = document.getElementById("save")
 
-save.addEventListener('click', (event) =>{
+save.addEventListener('click', (event) => {
     event.preventDefault();
     const isValid = validateFields();
-    if (isValid){
+    if (isValid) {
         checkItin();
     }
 });
@@ -26,7 +26,7 @@ async function checkItin() {
         } else {
             alert("Error checking ITIN number");
         }
-    } catch(error) {
+    } catch (error) {
         console.error(error)
     }
 }
@@ -47,13 +47,13 @@ async function postCustomers() {
         })
         alert("Customer created successfully");
         window.location = "customerlist.html"
-        
-    } catch(error) {
+
+    } catch (error) {
         console.error(error)
     }
 }
 
-function validateFields(){
+function validateFields() {
     const nameValue = name.value.trim();
     const itinValue = itin.value.trim();
     const phoneValue = phone.value.trim();
