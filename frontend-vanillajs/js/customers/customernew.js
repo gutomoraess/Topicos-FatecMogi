@@ -6,7 +6,7 @@ const email = document.getElementById("email")
 const save = document.getElementById("save")
 
 save.addEventListener('click', (event) =>{
-    event.preventDefault(); // prevent the default form submission
+    event.preventDefault();
     const isValid = validateFields();
     if (isValid){
         checkItin();
@@ -18,7 +18,6 @@ async function checkItin() {
         const response = await fetch(`http://localhost:8080/customers/${itin.value}`);
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
             if (data != null) {
                 alert("ITIN number already exists. Please enter a different ITIN number");
             } else {
