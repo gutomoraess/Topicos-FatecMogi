@@ -26,6 +26,12 @@ async function populateForm(getItin) {
                 email: document.getElementById('email').value
             }
 
+            const itinRegex = /^[0-9]{9}$/;
+            if (!itinRegex.test(updatedCustomer.itin)) {
+                alert("Invalid ITIN format. Please enter a 9-digit number");
+                return;
+            }
+
             const success = await editCustomer(getItin, updatedCustomer)
 
             if (success) {

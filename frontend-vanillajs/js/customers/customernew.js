@@ -5,7 +5,36 @@ const phone = document.getElementById("phone")
 const email = document.getElementById("email")
 const save = document.getElementById("save")
 
-save.addEventListener('click', postCustomers)
+save.addEventListener('click', (event) =>{
+    event.preventDefault(); // prevent the default form submission
+    const isValid = validateFields();
+    if (isValid){
+        const itin = document.getElementById("itin");
+        console.log(itin.value);
+        if (itin) {
+            checkItin(itin.value);
+        }
+    }
+});
+
+async function checkItin(itinValue) {
+    try {
+        const response = await fetch(`http://localhost:8080/customers/${itinValue}`);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            if (data != null) {
+                alert("ITIN number already exists. Please enter a different ITIN number");
+            } else {
+                postCustomers();
+            }
+        } else {
+            alert("Error checking ITIN number");
+        }
+    } catch(error) {
+        console.error(error)
+    }
+}
 
 async function postCustomers() {
     try {
@@ -21,9 +50,46 @@ async function postCustomers() {
                 email: email.value
             })
         })
+        alert("Customer created successfully");
         window.location = "customerlist.html"
         
     } catch(error) {
         console.error(error)
     }
+}
+
+function validateFields(){
+    const nameValue = name.value.trim();
+    const itinValue = itin.value.trim();
+    const phoneValue = phone.value.trim();
+    const emailValue = email.value.trim();
+
+    if (nameValue.length === 0) {
+        alert("Name field is required");
+        return false;
+    }
+
+    if (itinValue.length === 0) {
+        alert("ITIN field is required");
+        return false;
+    }
+
+    const itinRegex = /^[0-9]{9}$/;
+
+    if (!itinRegex.test(itinValue)) {
+        alert("Invalid ITIN format. Please enter a 9-digit number");
+        return false;
+    }
+
+    if (phoneValue.length === 0) {
+        alert("Phone field is required");
+        return false;
+    }
+
+    if (emailValue.length === 0) {
+        alert("Email field is required");
+        return false;
+    }
+
+    return true;
 }
