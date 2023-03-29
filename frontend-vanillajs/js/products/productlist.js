@@ -10,11 +10,10 @@ async function getProducts() {
             productBody.innerHTML = `<tr><td id="found" colspan="7">No products found</td></tr>`
         } else {
             for (const product of products) {
-
-                if (product.perishable === true) {
+                if (product.perishable === "true") {
                     right = '<img  alt="TRUE" title="TRUE" src="../../images/checkmark.png" width="22px" align="center">'
                 } else {
-                    right = '<img  alt="TRUE" title="TRUE" src="../../images/x.png" width="22px" align="center">'
+                    right = '<img  alt="FALSE" title="FALSE" src="../../images/x.png" width="22px" align="center">'
                 }
 
                 productBody.innerHTML = productBody.innerHTML + `<tr id="trlines">

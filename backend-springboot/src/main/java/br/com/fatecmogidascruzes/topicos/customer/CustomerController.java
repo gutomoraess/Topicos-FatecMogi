@@ -1,10 +1,11 @@
-package br.com.fatecmogidascruzes.topicos.cliente;
+package br.com.fatecmogidascruzes.topicos.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/customers")
@@ -16,39 +17,33 @@ public class CustomerController {
 
     @PostMapping
     public void create(@RequestBody Customer customer) {
-        customerRepository.save(customer);
+        new SaveCustomer(customerRepository).execute(customer);
     }
 
     @GetMapping
-    public List<Customer> getAll() {
-        return customerRepository.findAll();
+    public List<CustomerPM> getAll() {
+        return new ListCustomer(customerRepository)
+                .execute()
+                .stream()
+                .map(CustomerPM::new)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{itin}")
     public Optional<Customer> getByItin(@PathVariable String itin) {
+        // TODO: add use case
         return customerRepository.findByItin(itin);
     }
 
     @DeleteMapping("/{itin}")
     public void deleteByItin(@PathVariable String itin) {
-        Optional<Customer> customer = customerRepository.findByItin(itin);
-        if(customer.isPresent()) {
-            customerRepository.delete(customer.get());
-        }
+        new DeleteCustomer(customerRepository).execute(itin);
     }
 
     @PutMapping("/{itin}")
     public void updateByItin(@PathVariable String itin,
                              @RequestBody Customer customer) {
-        Optional<Customer> opDatabaseCustomer = customerRepository.findByItin(itin);
-        if(opDatabaseCustomer.isPresent()) {
-            Customer databaseCustomer = opDatabaseCustomer.get();
-            databaseCustomer.setName(customer.getName());
-            databaseCustomer.setItin(customer.getItin());
-            databaseCustomer.setEmail(customer.getEmail());
-            databaseCustomer.setPhone(customer.getPhone());
-            customerRepository.save(databaseCustomer);
-        }
+        new UpdateCustomer(customerRepository).execute(customer);
     }
 
 }

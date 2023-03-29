@@ -1,4 +1,4 @@
-package br.com.fatecmogidascruzes.topicos.cliente;
+package br.com.fatecmogidascruzes.topicos.customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

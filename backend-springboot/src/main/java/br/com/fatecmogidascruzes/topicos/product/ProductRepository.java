@@ -1,4 +1,4 @@
-package br.com.fatecmogidascruzes.topicos.produto;
+package br.com.fatecmogidascruzes.topicos.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;

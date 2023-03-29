@@ -1,18 +1,18 @@
-package br.com.fatecmogidascruzes.topicos.cliente;
+package br.com.fatecmogidascruzes.topicos.customer;
 
-import javax.persistence.*;
-import java.util.Objects;
+public class CustomerPM {
 
-@Entity
-public class Customer {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     private String itin;
     private String name;
     private String phone;
     private String email;
+
+    public CustomerPM(Customer customer) {
+        setItin(customer.getItin());
+        setName(customer.getName());
+        setPhone(customer.getPhone());
+        setEmail(customer.getEmail());
+    }
 
     public String getItin() {
         return itin;
@@ -46,16 +46,4 @@ public class Customer {
         this.email = email;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Customer customer = (Customer) o;
-        return Objects.equals(id, customer.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

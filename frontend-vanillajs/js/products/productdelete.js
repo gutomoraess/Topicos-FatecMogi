@@ -1,7 +1,7 @@
 const deleteButtons = document.querySelectorAll('#deleteproduct');
 
 async function deleteProduct(id) {
-    const confirmed = confirm('Are you sure you want to delete this customer?');
+    const confirmed = confirm('Are you sure you want to delete this product?');
     if (confirmed) {
         try {
             const response = await fetch(`http://localhost:8080/products/${id}`, {
